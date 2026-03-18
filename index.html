@@ -130,6 +130,10 @@
             gap: 8px;
         }
 
+        .contact-pill a:hover {
+            text-decoration: underline;
+        }
+
         /* --- CORPS DU CV --- */
         .main-content {
             display: flex;
@@ -187,6 +191,18 @@
             color: var(--primary-color);
             text-transform: uppercase;
             margin-bottom: 2px;
+        }
+
+        /* --- Style pour les liens des projets --- */
+        .item-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .item-title a:hover {
+            text-decoration: underline;
+            color: #382c80; /* Bleu légèrement plus clair au survol */
         }
 
         .item-subtitle {
@@ -250,7 +266,7 @@
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 0 !important; /* Retire totalement les dates et URLs générées par le navigateur */
+                margin: 0 !important; 
             }
 
             * {
@@ -272,23 +288,26 @@
                 padding-bottom: 0 !important;
             }
 
-            /* 1. Compacter l'en-tête */
+            /* On enlève le soulignement des liens lors de l'impression */
+            .item-title a {
+                text-decoration: none !important;
+                color: var(--primary-color) !important;
+            }
+
             .header-wrapper { padding: 25px 0 0 25px !important; }
             .header-bg { 
                 padding: 15px 25px 15px 15px !important; 
                 border-radius: 120px 0 0 120px !important;
                 gap: 20px !important;
             }
-            .profile-pic { width: 130px !important; height: 130px !important; } /* Image un peu plus petite */
+            .profile-pic { width: 130px !important; height: 130px !important; }
             .header-content h1 { font-size: 1.8rem !important; margin-bottom: 2px !important; }
             .job-title { font-size: 0.95rem !important; margin-bottom: 6px !important; }
             .summary { font-size: 0.8rem !important; line-height: 1.3 !important; }
 
-            /* 2. Compacter les contacts */
             .contact-bar { margin-top: -10px !important; gap: 10px !important; }
             .contact-pill { padding: 6px 14px !important; font-size: 0.75rem !important; }
 
-            /* 3. Compacter les espaces vides du corps */
             .main-content { 
                 padding: 20px 30px !important; 
                 gap: 40px !important; 
@@ -303,10 +322,8 @@
             .left-column ul li { font-size: 0.8rem !important; margin-bottom: 4px !important; }
             .exp-details li { font-size: 0.8rem !important; margin-bottom: 3px !important; line-height: 1.3 !important; }
 
-            /* Cacher le bouton d'impression */
             .btn-print { display: none !important; }
             
-            /* Sécurité contre les coupures au milieu d'un mot */
             section, .item-block { page-break-inside: avoid; break-inside: avoid; }
         }
     </style>
@@ -420,35 +437,39 @@
                 <div class="section-title">PROJETS</div>
 
                 <div class="item-block">
-                    <div class="item-title">ARCHIBURKINA</div>
+                    <div class="item-title"><a href="https://archiburkina.vercel.app/" target="_blank">ARCHIBURKINA</a></div>
                     <div class="item-subtitle">Site vitrine d’entreprise d’architecture | HTML, CSS, JavaScript</div>
                 </div>
 
                 <div class="item-block">
-                    <div class="item-title">FASOLUXE HÔTEL</div>
+                    <div class="item-title"><a href="http://fasoluxe.atwebpages.com/public" target="_blank">FASOLUXE HÔTEL</a></div>
                     <div class="item-subtitle">Site de gestion d’hôtel | PHP, MySQL</div>
                 </div>
 
                 <div class="item-block">
-                    <div class="item-title">ALPHA</div>
+                    <div class="item-title"><a href="http://alphaitiot.atwebpages.com" target="_blank">ALPHA</a></div>
                     <div class="item-subtitle">Site dynamique IA & IoT | PHP, MySQL</div>
                 </div>
 
                 <div class="item-block">
-                    <div class="item-title">IMMO</div>
+                    <div class="item-title"><a href="#" target="_blank">IMMO</a></div>
                     <div class="item-subtitle">Application web de gestion immobilière | Python, SQL, HTML/CSS, JS, PHP</div>
                 </div>
 
                 <div class="item-block">
-                    <div class="item-title">Curriculum Vitae</div>
-                    <div class="item-subtitle">Site de presentation de CV | HTML, CSS, JavaScript</div>
+                    <div class="item-title"><a href="https://fariflore-ymer.vercel.app/" target="_blank">FARIFLORE</a></div>
+                    <div class="item-subtitle">Sites web de présentation (images & événementiel) | HTML/CSS, JS</div>
                 </div>
 
                 <div class="item-block">
-                    <div class="item-title">Maquis manager</div>
-                    <div class="item-subtitle">Application & site de gestion de maquis | Python, Django, PostgreSQL, Bootstrap</div>
+                    <div class="item-title"><a href="https://cveng.netlify.app/" target="_blank">CURRICULUM VITAE</a></div>
+                    <div class="item-subtitle">Site de présentation de CV | HTML, CSS, JavaScript</div>
                 </div>
 
+                <div class="item-block">
+                    <div class="item-title"><a href="https://suzuya.pythonanywhere.com/" target="_blank">MAQUIS MANAGER</a></div>
+                    <div class="item-subtitle">Application & site de gestion de maquis | Python, Django, PostgreSQL, Bootstrap</div>
+                </div>
 
             </section>
 
